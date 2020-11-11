@@ -1268,7 +1268,7 @@ void st_prep_buffer()
     float inv_rate = dt/(last_n_steps_remaining - step_dist_remaining); // Compute adjusted step rate inverse
 
     // Compute CPU cycles per step for the prepped segment.
-	uint32_t cycles = (uint32_t)ceilf((TICKS_PER_MICROSECOND * 1000000 * 60) * inv_rate ); // (cycles/step)
+	uint32_t cycles = (uint32_t)ceilf((TICKS_PER_MICROSECOND * 1000000) * inv_rate * 60); // (cycles/step)
 
     #ifdef ADAPTIVE_MULTI_AXIS_STEP_SMOOTHING
       // Compute step timing and multi-axis smoothing level.
